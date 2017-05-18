@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ESTILOS BÁSICOS */
+header {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  margin-bottom: 1em;
+  min-height: 30px
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+  color: gray;
+  font-size: 1.2rem;
+}
+h4 {
+    font-size: 1rem;
+}
+#cuerpo{
+  padding:20px;
+}
+form {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 85%;
+}
+label {
+  display: block;
+  font-weight: 800;
+  color: gray;
+  margin: 1.2em 0 .5em;
+  float: left;
+}
+input, select {
+    width: 97%;
+    border-radius: 3px;
+    border: 1px solid #f1f1f1;
+    line-height: 120%;
+    padding: 1%;
+    font-size: 120%;
+    transition: .5s ease all;
+    background: rgba(255,255,255,.9);
+}
+.btn {
+    display: block;
+    text-align: center;
+    font-weight: 800;
+    cursor: pointer;
+    color: gray;
+    background-color: transparent;
+    letter-spacing: 1px;
+    font-size: 90%;
+    padding: 1em 1.5em;
+    transition: .5s ease all;
+    margin: 2em auto 1em;
+    border: 1px solid gray;
+    float: left;
+}
+.btn:hover, .btn:active, .btn:focus {
+      background-color: dimgrey;
+    transition: .5s ease all;
+    color: #fff;
+}
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  display: block;
+  margin: 1em 0;
+  line-height: 1.4;
+  text-align: center;
+}
+span {
+  border-bottom: 2px gray solid;
+  font-weight: 700;
+}
+b {
+  font-weight: 800;
+  color: gray;
+}
+
+small {
+  font-size: .8rem;
+}
+footer {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 5em 0 0;
+    padding: 0 0 2em;
+    overflow: hidden;
+}
+
+/* Especial */
+#contenedorListas {
+    overflow: hidden;
+    margin: 2em 0 0;
+}
+.lista {
+    width: 15em;
+    margin-right: 1em;
+    float: left;
+}
