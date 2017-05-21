@@ -27,7 +27,7 @@ window.onload = function init() {
 			cajaLista.innerHTML = "";
 			var form = document.createElement('form');
 			var inputNombreLista = document.createElement('input');
-			inputNombreLista.placeholder = "Escribe aquí el nombre de la nueva lista...";
+			inputNombreLista.placeholder = "Añadir una lista...";
 			inputNombreLista.type = 'text';
 			inputNombreLista.value = "";
 			var botonNombreLista = document.createElement('button');
@@ -40,24 +40,30 @@ window.onload = function init() {
 			form.appendChild(botonNombreLista);
 			form.appendChild(botonNombreListaCancel);
 			cajaLista.appendChild(form);
+
 			console.log(listas);
 			botonNombreLista.onclick = function guardarNombre(){
 				cajaLista.innerHTML = "";
 				const newList = new Lista (inputNombreLista.value);
 				listas.push(newList);
 				
-				var listaTitulo = document.createElement('header');
-				var listaTituloH2 = document.createElement('h2');
-				var listaTituloH2Text = document.createTextNode(inputNombreLista.value);
-				listaTituloH2.appendChild(listaTituloH2Text);
-				listaTitulo.appendChild(listaTituloH2);
-				var listaTituloEditar = document.createElement('button');
-				listaTituloEditar.classList = 'btn btn-edit';
-				listaTitulo.appendChild(listaTituloEditar);
-				cajaLista.appendChild(listaTitulo);
-				contenedor.appendChild(cajaLista);
-				contenedor.appendChild(botonLista);
-				listaTituloEditar.onclick = function cambiarNombre() {
+				var listaInnerH2 = document.createElement('h2');
+				var listaInnerH2Text = document.createTextNode(inputNombreLista.value);
+				listaInnerH2.appendChild(listaInnerH2Text);
+				var listaInnerEditar = document.createElement('button');
+				listaInnerEditar.classList = 'btn btn-edit';
+				var listaInnerHeader = document.createElement('header');
+				listaInnerHeader.appendChild(listaInnerH2);
+				listaInnerHeader.appendChild(listaInnerEditar);
+				var listaInner = document.createElement('div');
+				listaInner.className = "inner";				
+				listaInner.appendChild(listaInnerHeader);
+				var cajaNueva = document.createElement('div');
+				cajaNueva.className = 'lista';
+				cajaNueva.appendChild(listaInner);
+				contenedor.appendChild(cajaNueva);
+				
+				listaInnerEditar.onclick = function cambiarNombre() {
 					//newList.nombreLista();
 					alert('cambiar nombre');
 				}

@@ -1,6 +1,49 @@
+@charset "UTF-8";
+@font-face {
+font-family: "untitled-font-5";
+src:url("fonts/untitled-font-5.eot");
+src:url("fonts/untitled-font-5.eot?#iefix") format("embedded-opentype"),
+url("fonts/untitled-font-5.woff") format("woff"),
+url("fonts/untitled-font-5.ttf") format("truetype"),
+url("fonts/untitled-font-5.svg#untitled-font-5") format("svg");
+font-weight: normal;
+font-style: normal;
+
+}
+[data-icon]:before {
+font-family: "untitled-font-5" !important;
+content: attr(data-icon);
+font-style: normal !important;
+font-weight: normal !important;
+font-variant: normal !important;
+text-transform: none !important;
+speak: none;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+font-family: "untitled-font-5" !important;
+font-style: normal !important;
+font-weight: normal !important;
+font-variant: normal !important;
+text-transform: none !important;
+speak: none;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.icon-x:before {
+content: "\61";
+}
+.icon-pen:before {
+content: "\62";
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -15,144 +58,227 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
+display: block;
 }
 body {
-  line-height: 1;
-  font-family: 'Raleway', Helvetica, Arial, sans-serif;
-  background-color: #f9f9f9;
+color: #fff;
+line-height: 1;
+font-family: 'Inconsolata', Helvetica, Arial, sans-serif;
+background-color: #f9f9f9;
+background-image: url(../img/bg.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position-y: bottom;
+background-position-x: center;
+min-height: 100vh; 
+transition: .5s ease all;
 }
 ol, ul {
-  list-style: none;
+list-style: none;
 }
 blockquote, q {
-  quotes: none;
+quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
-  content: none;
+content: '';
+content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+border-collapse: collapse;
+border-spacing: 0;
 }
 
 /* ESTILOS BÁSICOS */
-header {
-  background-color: gray;
-  color: white;
-  padding: 5px;
-  margin-bottom: 1em;
-  min-height: 30px
+#header {
+background-color: rgba(0,0,0,.2);
+color: white;
+padding: 10px 5px 0px;
+margin-bottom: 1em;
+min-height: 30px;
+text-align: center;
+}
+#header > .logo, #header > img {
+opacity: .7;
+transition: .5s all ease;
+}
+#header:hover > .logo, #header:hover > img {
+opacity: 1;
+transition: .5s all ease;
+}
+#header img {
+max-width: 1.1rem;
+height: auto;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 800;
+font-family: 'Inconsolata', Helvetica, Arial, sans-serif;
+font-weight: 700;
 }
 h1 {
-  font-size: 2rem;
+font-size: 2rem;
 }
 h2 {
-    font-size: 1.5rem;
+font-size: 1.5rem;
 }
 h3 {
-  color: gray;
-  font-size: 1.2rem;
+color: gray;
+font-size: 1.2rem;
 }
 h4 {
-    font-size: 1rem;
+font-size: 1rem;
+}
+.logo {
+font-size: 1.3rem;
+display: inline-block;
 }
 #cuerpo{
-  padding:20px;
+padding: 2%;
+position: relative;
+width: 96%;
 }
 form {
-  width: 100%;
-  margin: 0 auto;
-  font-size: 85%;
+width: 95%;
+margin: 0 auto;
+font-size: 85%;
+overflow: hidden;
+background-color: rgba(0,0,0,.5);
+padding: 2.5%;
 }
 label {
-  display: block;
-  font-weight: 800;
-  color: gray;
-  margin: 1.2em 0 .5em;
-  float: left;
+display: block;
+font-weight: 700;
+color: gray;
+margin: 1.2em 0 .5em;
+float: left;
 }
 input, select {
-    width: 97%;
-    border-radius: 3px;
-    border: 1px solid #f1f1f1;
-    line-height: 120%;
-    padding: 1%;
-    font-size: 120%;
-    transition: .5s ease all;
-    background: rgba(255,255,255,.9);
+width: 97%;
+border-radius: 2px;
+border: none;
+line-height: 120%;
+padding: 1.5%;
+font-size: 120%;
+transition: .5s ease all;
+background: rgba(255,255,255,.7);
 }
 .btn {
-    display: block;
-    text-align: center;
-    font-weight: 800;
-    cursor: pointer;
-    color: gray;
-    background-color: transparent;
-    letter-spacing: 1px;
-    font-size: 90%;
-    padding: 1em 1.5em;
-    transition: .5s ease all;
-    margin: 2em auto 1em;
-    border: 1px solid gray;
-    float: left;
+display: block;
+text-align: center;
+font-weight: 700;
+cursor: pointer;
+color: gray;
+background-color: transparent;
+font-size: 90%;
+padding: .5em 1em;
+transition: .5s ease all;
+margin: 1em 1em 5px 0;
+border: 1px solid gray;
+float: left;
 }
 .btn:hover, .btn:active, .btn:focus {
-      background-color: dimgrey;
-    transition: .5s ease all;
-    color: #fff;
+background-color: dimgrey;
+transition: .5s ease all;
+color: #fff;
 }
 p {
-  font-family: Helvetica, Arial, sans-serif;
-  display: block;
-  margin: 1em 0;
-  line-height: 1.4;
-  text-align: center;
+font-family: 'Inconsolata', Helvetica, Arial, sans-serif;
+display: block;
+margin: 1em 0;
+line-height: 1.4;
+text-align: center;
 }
 span {
-  border-bottom: 2px gray solid;
-  font-weight: 700;
+border-bottom: 2px gray solid;
+font-weight: 700;
 }
 b {
-  font-weight: 800;
-  color: gray;
+font-weight: 700;
+color: gray;
 }
 
 small {
-  font-size: .8rem;
+font-size: .8rem;
+color: #fff;
 }
 footer {
-    display: block;
-    text-align: center;
-    width: 100%;
-    margin: 5em 0 0;
-    padding: 0 0 2em;
-    overflow: hidden;
+display: block;
+text-align: center;
+width: 100%;
+padding: 2vh 0 0;
+overflow: hidden;
+height: 3vh;
 }
 
 /* Especial */
 #contenedorListas {
-    overflow: hidden;
-    margin: 2em 0 0;
+*display:inline;
+*zoom:1;
+margin: 2em 0 0;
+overflow-x: auto;
+overflow-y: hidden;
+height: 100%;
+white-space: nowrap;
 }
 .lista {
-    width: 15em;
-    margin-right: 1em;
-    float: left;
+width: 17em;
+display: inline-block;
+vertical-align: top;
+height: 75vh;
+margin: 0 5px;
+}
+.lista .inner {
+width: 95%;
+margin: 0 auto;
+font-size: 85%;
+overflow: hidden;
+background-color: rgba(0,0,0,.5);
+padding: 2.5%;
+}
+.lista .inner header h2 {
+text-align: left;
+float: left;
+margin: 0.3em 0 0 0.3em;
+}
+.lista .inner header .btn {
+float: right;
+margin: .4em 0;
+}
+.btn-lista {
+width: 100%;
+background: rgba(0,0,0,.2);
+text-align: left;
+border: none;
+padding: 1em;
+margin: 0;
+color: lightgrey;
+}
+.btn-lista:hover, .btn-lista:focus, .btn-lista:active {
+background: rgba(0,0,0,.5);
+}
+.btn-cancel, .btn-edit {
+position: relative;
+height: 2.3em;
+width: 2.3em;
+}
+.btn-cancel:after, .btn-edit:after {
+font-family: "untitled-font-5";
+position: absolute;
+top: .55em;
+left: .6em;
+}
+.btn-edit:after{
+content:"\62";
+}
+.btn-cancel:after{
+content:"\61";
 }
