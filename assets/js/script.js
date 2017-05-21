@@ -5,80 +5,76 @@ function Tarea(nombre) {
 		this.nombreTarea = name;
 	}
 }
+var listas = [];
 /* Constructor Lista */
 function Lista(nombre) {
 	this.nombreLista = nombre;
 	this.editarNombreLista = function (name) {
 		this.nombreLista = name;
 	}
-	var tareas = {};
+	this.tareas = [];
 }
 
 window.onload = function init() {
 	var contenedor = document.getElementById('contenedorListas');
-	var listas = [];
+	var cajaLista = document.getElementsByClassName('lista')[0];
+	var botonLista = document.getElementsByClassName('btn-lista')[0];
 
-	function crearLista() {
-		var cajaLista= document.createElement('div');
-		cajaLista.className = 'lista';
-		var botonLista = document.createElement('button');
-		botonLista.classList = 'btn btn-lista';
-		botonLista.onclick = function nuevaLista(){
-			cajaLista.innerHTML = "";
-			var form = document.createElement('form');
-			var inputNombreLista = document.createElement('input');
-			inputNombreLista.placeholder = "Añadir una lista...";
-			inputNombreLista.type = 'text';
-			inputNombreLista.value = "";
-			var botonNombreLista = document.createElement('button');
-			var botonNombreListaText = document.createTextNode('Guardar');
-			botonNombreLista.classList = 'btn btn-guardar';
-			botonNombreLista.appendChild(botonNombreListaText);
-			var botonNombreListaCancel = document.createElement('button');
-			botonNombreListaCancel.classList = 'btn btn-cancel';
-			form.appendChild(inputNombreLista);
-			form.appendChild(botonNombreLista);
-			form.appendChild(botonNombreListaCancel);
-			cajaLista.appendChild(form);
+	botonLista.onclick = function nuevaLista(){
 
-			console.log(listas);
-			botonNombreLista.onclick = function guardarNombre(){
-				cajaLista.innerHTML = "";
-				const newList = new Lista (inputNombreLista.value);
-				listas.push(newList);
-				
-				var listaInnerH2 = document.createElement('h2');
-				var listaInnerH2Text = document.createTextNode(inputNombreLista.value);
-				listaInnerH2.appendChild(listaInnerH2Text);
-				var listaInnerEditar = document.createElement('button');
-				listaInnerEditar.classList = 'btn btn-edit';
-				var listaInnerHeader = document.createElement('header');
-				listaInnerHeader.appendChild(listaInnerH2);
-				listaInnerHeader.appendChild(listaInnerEditar);
-				var listaInner = document.createElement('div');
-				listaInner.className = "inner";				
-				listaInner.appendChild(listaInnerHeader);
-				var cajaNueva = document.createElement('div');
-				cajaNueva.className = 'lista';
-				cajaNueva.appendChild(listaInner);
-				contenedor.appendChild(cajaNueva);
-				
-				listaInnerEditar.onclick = function cambiarNombre() {
-					//newList.nombreLista();
-					alert('cambiar nombre');
-				}
-			}
-			botonNombreListaCancel.onclick = function cancel() {
-				// body...
-				alert('cancelar nueva lista')
+		var form = document.createElement('form');
+		var inputNombreLista = document.createElement('input');
+		inputNombreLista.placeholder = "Añadir una lista...";
+		inputNombreLista.type = 'text';
+		inputNombreLista.value = "";
+		var botonNombreLista = document.createElement('button');
+		var botonNombreListaText = document.createTextNode('Guardar');
+		botonNombreLista.classList = 'btn btn-guardar';
+		botonNombreLista.appendChild(botonNombreListaText);
+		var botonNombreListaCancel = document.createElement('button');
+		botonNombreListaCancel.classList = 'btn btn-cancel';
+		form.appendChild(inputNombreLista);
+		form.appendChild(botonNombreLista);
+		form.appendChild(botonNombreListaCancel);
+		cajaLista.appendChild(form);
+		console.log(listas);
+
+		botonNombreLista.onclick = function guardarNombre(){
+			cajaLista.removeChild(form);
+			const newList = new Lista (inputNombreLista.value);
+			listas.push(newList);
+
+			var listaInnerH2 = document.createElement('h2');
+			var listaInnerH2Text = document.createTextNode(inputNombreLista.value);
+			listaInnerH2.appendChild(listaInnerH2Text);
+			var listaInnerEditar = document.createElement('button');
+			listaInnerEditar.classList = 'btn btn-edit';
+			var listaInnerHeader = document.createElement('header');
+			listaInnerHeader.appendChild(listaInnerH2);
+			listaInnerHeader.appendChild(listaInnerEditar);
+
+			var crearTarea = document.createElement('button');
+			crearTarea.classList = 'btn btn-tarea';
+			var crearTareaText = document.createTextNode('Añadir una tarea...');
+			crearTarea.appendChild(crearTareaText);
+
+			var listaInner = document.createElement('div');
+			listaInner.className = "inner";				
+			listaInner.appendChild(listaInnerHeader);
+			listaInner.appendChild(crearTarea);
+
+			var cajaNueva = document.createElement('div');
+			cajaNueva.className = 'lista';
+			cajaNueva.appendChild(listaInner);
+			contenedor.appendChild(cajaNueva);
+			
+			listaInnerEditar.onclick = function cambiarNombre() {
 			}
 			return false;
-		};
-		var botonListaText = document.createTextNode('Añadir una lista...');
-		botonLista.appendChild(botonListaText);
-		cajaLista.appendChild(botonLista);
-		contenedor.appendChild(cajaLista);
+		}
+		botonNombreListaCancel.onclick = function cancel() {
+		}
 		return false;
-	}
-	crearLista();
+	};
+	return false;
 }
