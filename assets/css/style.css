@@ -118,8 +118,8 @@ transition: .5s all ease;
 #header img {
 max-width: 1.1rem;
 height: auto;
-    top: 2px;
-    position: relative;
+top: 2px;
+position: relative;
 }
 h1, h2, h3, h4, h5, h6 {
 font-family: 'Inconsolata', Helvetica, Arial, sans-serif;
@@ -146,6 +146,7 @@ display: inline-block;
 padding: 2%;
 position: relative;
 width: 96%;
+height: 78vh;
 }
 form {
 width: 95%;
@@ -219,7 +220,7 @@ overflow: hidden;
 height: 3vh;
 }
 .hidden {
-  display: none;
+display: none;
 }
 
 /* Especial */
@@ -247,26 +248,54 @@ overflow: hidden;
 background-color: rgba(0,0,0,.5);
 padding: 2.5%;
 }
+.lista .inner header {
+margin: 0 .5em 1em;
+overflow: hidden;
+}
 .lista .inner header h2 {
 text-align: left;
 float: left;
-margin: 0.3em 0 0 0.3em;
+margin: 0.3em 0 0;
 }
 .lista .inner header .btn {
 float: right;
 margin: .4em 0;
 }
+.lista .inner form {
+background: none;
+}
+.lista .inner .tarea {
+display: block;
+clear: both;
+background: rgba(0,0,0,.25);
+padding: 0.6em;
+margin: .5em.25em;
+overflow: hidden;
+}
+.lista .inner .tarea h3 {
+color: #fff;
+float: left;
+}
+.lista .inner .tarea .btn-cancel {
+float: right;
+margin: 0;
+font-size: 60%;
+}
 .btn-lista,
 .btn-tarea:hover, .btn-tarea:focus, .btn-tarea:active {
-  background: rgba(0,0,0,.2);
+background: rgba(0,0,0,.2);
 }
 .btn-lista, .btn-tarea {
-width: 100%;
+width: 97%;
 text-align: left;
 border: none;
 padding: 1em;
-margin: 0;
+margin: 0 .35em;
 color: lightgrey;
+}
+.btn-lista {
+margin: 0;
+width: 100%;
 }
 .btn-lista:hover, .btn-lista:focus, .btn-lista:active {
 background: rgba(0,0,0,.5);
@@ -280,7 +309,7 @@ width: 2.3em;
 font-family: "untitled-font-5";
 position: absolute;
 top: .55em;
-left: .6em;
+left: .55em;
 }
 .btn-edit:after{
 content:"\62";
